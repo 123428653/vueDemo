@@ -1,6 +1,6 @@
-# vueDemo
+# 选项卡Demo
 
-> A Vue.js Demos
+> A Vue.js Tab
 
 ## 启动方式
 
