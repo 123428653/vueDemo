@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="src/css/app.css">
+	<style>
+		[v-cloak] {display: none; }
+	</style>
+</head>
+<body>
+	<div id="main" v-cloak>
+		<div class="top"><div class="box">任务列表</div></div>
+		<div class="wrap">
+			<div class="box">
+				<p><strong>添加任务：</strong></p>
+				<p>
+					<input 
+						type="text" 
+						class="addTxt" 
+						v-model="addData"
+						v-on:keyup.enter="addList" 
+					/>
+				</p>
+				<div class="tipTag" v-show="list.length">
+					<strong class="taskMsg">{{listLen}}个任务未完成</strong>
+					<div class="tags">
+						<a href="#all">所有任务</a>
+						<a href="#unfinished">未完成的任务</a>
+						<a href="#finished">完成的任务</a>
+					</div>
+				</div>
+				<div class="todoBox">
+					<p><strong>任务列表：</strong></p>
+					<div class="todo">
+						<p v-show="!list.length">还没有添加任何任务</p>
+						<ul>
+							<li :class="{active:item.isChecked,editInput:item === editTodo && !item.isChecked}" v-for="item in filterList">
+								<div class="viwe">
+									<input type="checkbox" v-model="item.isChecked" />
+									<p @dblclick="edit(item)">{{ item.title }}</p>
+									<i title="删掉" class="del" @click="del(item)">x</i>
+								</div>
+								<input 
+									v-focus="editTodo === item" 
+									type="text" 
+									v-model="item.title"
+									@blur="edited(item)"
+									@keyup.enter="edited(item)"
+									@keyup.esc="cancelFn(item)"
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="src/js/vue.js"></script>
+	<script src="src/js/app.js"></script>
+</body>
+</html>

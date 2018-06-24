@@ -1,0 +1,27 @@
+@charset "UTF-8";
+html,body{background:#f1f1f1;}
+*{margin:0;padding:0;-webkit-user-select:none;}
+ul,li{list-style-type:none;}
+i,em{font-style:normal;}
+a{text-decoration:none;color:#000;}
+input[type="text"]{border:1px solid #ddd;outline:none;padding:5px 0 5px 10px;line-height:20px;height:20px;}
+.top{height:40px;background-color:lightgreen;color:#fff;line-height:40px;}
+.wrap{margin:10px 0;}
+.box{margin:0 auto;width:600px;}
+.addTxt{width:98%;border-radius:5px;margin:8px 0 10px 0;font-size:15px;}
+.tipTag{overflow:hidden;}
+.tipTag strong{color:red;display:inline-block;vertical-align:middle;}
+.tags{float:right;}
+.tags a{display:inline-block;border:1px solid #ddd;padding:2px 15px;cursor:pointer;margin-left:5px;background:#fff;}
+.tags a.active{background-color:#000;color:#fff;}
+.todoBox{margin-top:20px;}
+.todo{background-color:#fff;margin-top:10px;}
+.todo > p{padding:10px;box-shadow:0 0 1px 1px #eee; }
+.todo li{border-bottom:1px solid #eee;position:relative;}
+.todo li.active p{text-decoration:line-through;color:#999;}
+.todo li > input{position:absolute;display:none;left:40px;top:3px;padding:8px;width:83%;font-size:15px;}
+.todo li.editInput > input{display:block;}
+.viwe{padding:10px;position:relative;overflow: hidden;}
+.viwe input{float: left;margin:5px;}
+.viwe p{padding:0 30px;position:relative；}
+.viwe i{position:absolute;right:17px;top:11px;width:20px;height:20px;text-align:center;line-height:20px;cursor:pointer;font-weight:bold;color:red;}
